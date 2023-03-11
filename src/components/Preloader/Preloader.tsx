@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { InfinitySpin } from 'react-loader-spinner';
+
 import classes from './Preloader.module.scss';
 
 const Preloader: React.FunctionComponent = () => {

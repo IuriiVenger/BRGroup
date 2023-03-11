@@ -1,10 +1,12 @@
-import dateTransform from '@/services/dateTransform';
-import NewsData from '@/types/NewsData';
 import { Card } from '@mui/material';
 import { FC } from 'react';
-import classes from './NewsItem.module.scss';
-import moment from 'moment';
+
 import { Link } from 'react-router-dom';
+
+import classes from './NewsItem.module.scss';
+
+import dateTransform from '@/services/dateTransform';
+import NewsData from '@/types/NewsData';
 
 interface INewsItemProps {
   news: NewsData;

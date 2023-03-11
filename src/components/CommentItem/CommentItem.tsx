@@ -1,10 +1,12 @@
-import { FC, useState } from 'react';
-import classes from './CommentItem.module.scss';
-import CommentData from '@/types/CommentData';
-import { getDataById } from '@/api/getData';
-import DOMPurify from 'dompurify';
-import dateTransform from '@/services/dateTransform';
 import { Card } from '@mui/material';
+import DOMPurify from 'dompurify';
+import { FC, useState } from 'react';
+
+import classes from './CommentItem.module.scss';
+
+import { getDataById } from '@/api/getData';
+import dateTransform from '@/services/dateTransform';
+import CommentData from '@/types/CommentData';
 
 const CommentItem: FC<CommentData> = comment => {
   const [subComments, setSubComments] = useState([] as CommentData[]);

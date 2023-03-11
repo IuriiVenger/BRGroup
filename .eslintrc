@@ -1,0 +1,21 @@
+{
+  "extends": ["react-app", "react-app/jest"],
+  "plugins": ["prettier", "eslint-plugin-import", "eslint-plugin-import"],
+  "settings": {
+    "import/resolver": {}
+  },
+  "rules": {
+    "prettier/prettier": 2,
+    "import/order": [
+      2,
+      {
+        "groups": ["external", "builtin", "index", "sibling", "parent", "internal", "type"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always-and-inside-groups"
+      }
+    ]
+  }
+}

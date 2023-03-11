@@ -1,9 +1,13 @@
 import { Button } from '@mui/material';
+
+import { Link, NavLink, useLocation } from 'react-router-dom';
+
 import classes from './Header.module.scss';
+
 import gitHubLogo from '@/assets/icons/github.svg';
-import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
+  const location = useLocation();
   const isNewsPage = location.pathname.includes('news');
   return (
     <header className={classes.mainHeader}>
@@ -22,7 +26,7 @@ const Header = () => {
         href='https://github.com/IuriiVenger/IuriiVenger'
         target='__blank'
       >
-        <img src={gitHubLogo}></img>
+        <img src={gitHubLogo} alt='github'></img>
         <p>Iurii Venger on GitHub</p>
       </Button>
     </header>
