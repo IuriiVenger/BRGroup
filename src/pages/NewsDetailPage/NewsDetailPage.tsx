@@ -19,7 +19,7 @@ const NewsDetailPage = () => {
   const { id = '' } = useParams();
   const [currentNews, setCurrentNews] = useState({} as NewsData);
   const [comments, setComments] = useState([] as CommentData[]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState(new Date());
 
   const getCurrentNews = () => {
