@@ -29,9 +29,9 @@ const CommentItem: FC<CommentData> = comment => {
 
   return (
     <Card variant='outlined' className={classes.commentItem}>
-      <small className={classes.commentItem__header}>{`comment #${comment.id}, written by ${
-        comment.by
-      } at ${dateTransform(comment.time)}`}</small>
+      <small className={classes.commentItem__header}>
+        {`comment #${comment.id} by ${comment.by} at ${dateTransform(comment.time)}`}
+      </small>
       <p dangerouslySetInnerHTML={{ __html: cleanTextHtml }} />
       <small className={classes.commentItem__footer} onClick={toogleVisiblity}>
         {`subcomments (${comment.kids?.length ? comment.kids.length : 0})`}
