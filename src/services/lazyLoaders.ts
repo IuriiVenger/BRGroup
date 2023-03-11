@@ -6,6 +6,7 @@ export const LazyNewsListPage = lazy(() => {
     new Promise(resolve => setTimeout(resolve, 500)),
   ]).then(([moduleExports]) => moduleExports);
 });
+
 export const LazyNewsDetailPage = lazy(() => {
   return Promise.all([
     import('@/pages/NewsDetailPage/NewsDetailPage'),

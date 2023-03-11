@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
-import { getLatestNews } from '@/api/getData';
-import NewsData from '@/types/NewsData';
-import classes from './NewsListPage.module.scss';
-import NewsItem from '@/components/NewsItem/NewsItem';
-import { CircularProgress } from '@mui/material';
-import mainImage from '@/assets/main-image.svg';
-import { useLocation } from 'react-router-dom';
 import { LoadingButton } from '@mui/lab';
+import { CircularProgress } from '@mui/material';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import classes from './NewsListPage.module.scss';
+
+import { getLatestNews } from '@/api/getData';
+import mainImage from '@/assets/main-image.svg';
+import NewsItem from '@/components/NewsItem/NewsItem';
+import NewsData from '@/types/NewsData';
 
 const NewsListPage: React.FunctionComponent = () => {
   const [newsList, setNewsList] = useState([] as NewsData[]);
@@ -38,6 +41,7 @@ const NewsListPage: React.FunctionComponent = () => {
 
   useEffect(() => {
     newsList.length === 0 && getNews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     autoUpdateNews = setInterval(getNews, 60000);
     return () => {
       clearInterval(autoUpdateNews);
@@ -71,7 +75,7 @@ const NewsListPage: React.FunctionComponent = () => {
             Update now
           </LoadingButton>
         </section>
-        <img src={mainImage} alt='main-image' />
+        <img src={mainImage} alt='women-with-laptop' />
       </div>
       <h2 id='news-list'>
         News list <CircularProgress color='warning' sx={{ visibility: isLoading ? 'visible' : 'hidden' }} />

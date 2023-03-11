@@ -1,15 +1,19 @@
-import NewsData from '@/types/NewsData';
-import classes from './NewsDetailPage.module.scss';
-import { Link, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getDataById } from '@/api/getData';
-import dateTransform from '@/services/dateTransform';
-import CommentItem from '@/components/CommentItem/CommentItem';
-import CommentData from '@/types/CommentData';
-import { Button } from '@mui/material';
-import Preloader from '@/components/Preloader/Preloader';
 import { LoadingButton } from '@mui/lab';
+import { Button } from '@mui/material';
 import moment from 'moment';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+
+import classes from './NewsDetailPage.module.scss';
+
+import { getDataById } from '@/api/getData';
+import CommentItem from '@/components/CommentItem/CommentItem';
+import Preloader from '@/components/Preloader/Preloader';
+import dateTransform from '@/services/dateTransform';
+import CommentData from '@/types/CommentData';
+
+import NewsData from '@/types/NewsData';
 
 const NewsDetailPage = () => {
   const { id = '' } = useParams();
@@ -38,6 +42,7 @@ const NewsDetailPage = () => {
   useEffect(() => {
     getCurrentNews();
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const correctDate = dateTransform(currentNews.time);
