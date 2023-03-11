@@ -1,0 +1,67 @@
+// colors
+$white: #ffffff;
+$title-gray: #e1e1e6;
+$primary-gray: #a8a8b3;
+$dark-gray: #1f2729;
+$bright-orange: #fb651e;
+$dark-orange: #eba417;
+$background: #121414;
+
+// const
+$xxl: 1536px;
+$xl: 1280px;
+$lg: 1024px;
+$md: 768px;
+$sm: 640px;
+$xs: 480px;
+$mo: 479px;
+
+// media
+
+@mixin media-min($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @include media-min($xxl) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @include media-min($xl) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include media-min($lg) {
+    @content;
+  }
+}
+
+@mixin md {
+  @include media-min($md) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @include media-min($sm) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @include media-min($xs) {
+    @content;
+  }
+}
+
+@mixin mo {
+  @media only screen and (max-width: $mo) {
+    @content;
+  }
+}

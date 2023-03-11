@@ -1,0 +1,28 @@
+@import '@/styles/mixins.scss';
+
+.newsItem {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0.4rem;
+  width: 350px;
+  padding: 0.8rem;
+  background-color: $title-gray;
+
+  &:hover {
+    background-color: $bright-orange;
+    transition: 0.5s;
+  }
+
+  h3 {
+    flex-grow: 1;
+    color: $dark-gray;
+    text-transform: uppercase;
+  }
+  span {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 200;
+  }
+}

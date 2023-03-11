@@ -1,0 +1,42 @@
+@import '@/styles/mixins.scss';
+
+.mainHeader {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10rem;
+  color: $white;
+  gap: 5rem;
+  border-bottom: 1px solid $dark-gray;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+  flex-grow: 1;
+
+  a {
+    display: flex;
+    color: $white;
+    height: 100%;
+    align-items: center;
+    border-bottom: 3px solid $background;
+    padding: 20px;
+    text-transform: uppercase;
+  }
+}
+
+.headerButton {
+  border-radius: 25px;
+  font-weight: 700;
+  display: flex;
+  gap: 1rem;
+  text-transform: none;
+  padding: 0.8rem 1rem;
+}
+
+.active {
+  border-bottom: 3px solid $dark-orange;
+}
