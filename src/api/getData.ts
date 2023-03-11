@@ -16,7 +16,7 @@ export const getDataById = (id: string | number) => {
 export const getLatestNews = async () => {
   try {
     const newsList = await getData('https://hacker-news.firebaseio.com/v0/newstories.json');
-    const topNews = newsList.filter((item: number, index: number) => index < 100);
+    const topNews = newsList.slice(0, 100);
     return await Promise.all(
       topNews.map((news: number) => getData(`https://hacker-news.firebaseio.com/v0/item/${news}.json?print=pretty`))
     );
