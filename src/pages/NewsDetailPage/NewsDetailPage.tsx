@@ -60,7 +60,7 @@ const NewsDetailPage = () => {
         <LoadingButton loading={isLoading} variant='contained' color='warning' onClick={getCurrentNews}>
           Update comments
         </LoadingButton>
-        <Link to='/main'>
+        <Link to='/main/main#news-list'>
           <Button variant='outlined'>Go back</Button>
         </Link>
       </div>
